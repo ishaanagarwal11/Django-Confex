@@ -1,20 +1,45 @@
-body{
+body {
+    background-color: #FFE600;
+    color: #000;
+}
+
+body * {
+    font-family: monospace;
+}
+
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.sidebar {
     background-color: #0f121f;
-    background-image: url(stars.png);
-    background-repeat-y: no-repeat;
     color: #fff;
+    padding: 20px;
 }
 
-body *{
-    font-family: Ubuntu;
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-h1, h2, h3, h4, h5{
-    font-weight: normal;
-    margin: 0;
+.sidebar li {
+    margin-bottom: 10px;
 }
 
-a, a:hover, a:visited{
+.sidebar a {
     color: #fff;
     text-decoration: none;
+}
+
+.content {
+    padding: 20px;
+}
+
+
+
+.article-cell {
+    background-color: #fff;
 }

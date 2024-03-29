@@ -6,25 +6,31 @@
         <link rel="stylesheet" href="{% static 'styles.css' %}">
     </head>
     <body>
+      
         <div class="wrapper">
-            <h1><a href="{% url 'home' %}"><img src="{% static 'c.png' %}" style="width:100px;height:100px;"></a></h1>
-            <nav>
-                <ul>
-                    {% if user.is_authenticated %}
-                    <li>
-                        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
-                            {% csrf_token %}
-                            <button type="submit">Logout</button>
-                        </form>
-                    </li>
-                    <li><a href="{% url 'articles:create' %}">Create</a></li>
-                    {% else %}
+            <header>
+                <h1><a href="{% url 'home' %}"><img src="{% static 'logo.png' %}" style="width:100px;height:51px;"></a></h1>
+                <nav class="sidebar">
+                    <ul>
+                        {% if user.is_authenticated %}
+                        <li>
+                            <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit">Logout</button>
+                            </form>
+                        </li>
+                        <li><a href="{% url 'articles:create' %}">Create</a></li>
+                        {% else %}
                         <li><a href="{% url 'accounts:login' %}">Login</a></li>
                         <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
-                        
-                    {% endif %}
-                </ul>
-            </nav>           
-            {% block content %}
-            {% endblock %}
+                        {% endif %}
+                    </ul>
+                </nav>
+            </header>
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
 </html>
