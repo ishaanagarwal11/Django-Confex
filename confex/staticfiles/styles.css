@@ -1,0 +1,45 @@
+body {
+    background-color: #FFE600;
+    color: #000;
+}
+
+body * {
+    font-family: monospace;
+}
+
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.sidebar {
+    background-color: #0f121f;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    padding: 20px;
+}
+
+
+
+.article-cell {
+    background-color: #fff;
+}
