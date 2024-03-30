@@ -1,5 +1,6 @@
+/* CSS */
 body {
-    background-color: #FFE600;
+    background-color: #FFD700;
     color: #000;
 }
 
@@ -15,9 +16,13 @@ body * {
 }
 
 .sidebar {
-    background-color: #0f121f;
-    color: #fff;
+    background-color: rgb(201 193 193 / 48%);
+    color: #000;
     padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(147, 143, 143, 0.1); 
+    height: 75vh;
+    width: 18vh;
 }
 
 .sidebar ul {
@@ -32,14 +37,71 @@ body * {
 .sidebar a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s; /* Add transition for color change */
+}
+
+/* Change link color to yellow on hover */
+.sidebar a:hover {
+    color: yellow;
 }
 
 .content {
     padding: 20px;
 }
 
+.article-link {
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
 
+.article-link:hover {
+    background-color: #FFD700;
+}
 
 .article-cell {
     background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    transition: box-shadow 0.5s, background-color 0.5s; /* Combine transitions */
+}
+
+.article-cell:hover {
+    box-shadow: 10px 10px 10px #ff5c0063;
+    background-color: #FFD700; /* Change background color on hover */
+}
+
+h2 {
+    text-decoration: none;
+    color: #000;
+}
+
+.logout-link button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0.01;
+}
+
+.logout-link button:hover {
+    color: yellow;
+}
+
+/* Button styles */
+.filter-btn {
+    background-color: rgb(201 193 193 / 48%);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #ff5c0063;
+    color: #000;
 }

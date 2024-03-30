@@ -6,7 +6,7 @@ class Article(models.Model):
     slug = models.SlugField()
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
-    thumb = models.ImageField(default='default.png', blank=True)
+    thumb = models.ImageField(default='default1.png', blank=True)
     author = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
     approved = models.BooleanField(default=False) 
 
