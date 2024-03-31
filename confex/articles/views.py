@@ -3,6 +3,8 @@ from .models import Article
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
 from . import forms
+from django.core.mail import send_mail
+from django.conf import settings
 
 def article_list(request):
     articles = Article.objects.all().order_by('date')
@@ -20,6 +22,17 @@ def article_create(request):
             instance = form.save(commit=False)  
             instance.author = request.user
             instance.save()
+            
+            email = request.POST.get('email')
+            title = request.POST.get('title')
+            uploader = request.POST.get('author')
+
+            #send email
+            send_mail(
+                'New Paper Uploaded',
+                title,
+                'email',[email], fail_silently=False)
+
             return redirect('articles:list')
     else:
         form = forms.CreateArticle()
@@ -40,3 +53,5 @@ def my_articles(request):
     
     articles = Article.objects.filter(author=request.user).order_by('date')
     return render(request, 'articles/my_articles.html', {'form': form, 'articles': articles})
+
+
