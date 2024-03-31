@@ -12,10 +12,10 @@
         <p>{% if article.approved %}
             <p style="color:#000; background-color:chartreuse;">This article is APPROVED!</p>
         {% else %}
-            <p  style="color:#000; background-color:white;">This article is NOT approved.</p>
+            <p style="color:#000; background-color:white;">This article is NOT approved.</p>
         {% endif %}
         </p>
-        
-        </div>
+        <p><a href="{{ article.pdf.url }}" download>Download Document</a></p>
+    </div>
 </div>
 {% endblock %}

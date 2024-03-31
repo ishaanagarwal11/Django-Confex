@@ -9,9 +9,13 @@ class Article(models.Model):
     thumb = models.ImageField(default='default1.png', blank=True)
     author = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
     approved = models.BooleanField(default=False) 
+    pdf = models.FileField(upload_to='pdfs/', blank=True)
+    # New fields
+    email = models.EmailField()
+    organization = models.CharField(max_length=255)
 
     def __str__(self):
         return self.title  
-    
+
     def snippet(self):
         return self.body[:20] + '...'

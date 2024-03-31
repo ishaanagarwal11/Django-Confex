@@ -22,23 +22,32 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const articles = document.querySelectorAll('.article-cell');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const articles = document.querySelectorAll('.article-cell');
 
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const filter = this.dataset.filter;
-                    articles.forEach(article => {
-                        article.style.display = 'block';
-                        if (filter === 'approved' && !article.classList.contains('approved')) {
-                            article.style.display = 'none';
-                        }
-                        if (filter === 'not-approved' && !article.classList.contains('not-approved')) {
-                            article.style.display = 'none';
-                        }
-                    });
-                });
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove 'active' class from all filter buttons
+            filterBtns.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked filter button
+            this.classList.add('active');
+
+            const filter = this.dataset.filter;
+            articles.forEach(article => {
+                article.style.display = 'block';
+                if (filter === 'approved' && !article.classList.contains('approved')) {
+                    article.style.display = 'none';
+                }
+                if (filter === 'not-approved' && !article.classList.contains('not-approved')) {
+                    article.style.display = 'none';
+                }
             });
         });
+    });
+});
+
     </script>
 {% endblock %}

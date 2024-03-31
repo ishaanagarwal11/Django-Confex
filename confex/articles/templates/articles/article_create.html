@@ -6,9 +6,26 @@
         <form class="site-form" method="POST" action="{% url 'articles:create' %}" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form }}
+
             <button type="submit" value="create">Upload</button>
         </form>
     </div>
-    <script src="/assets/slugify.js"></script>
 
+    <script>
+        // Slugify function
+        const slugify = (val) => {
+            return val.toString().toLowerCase().trim()
+                .replace(/&/g, '-and-')         // Replace & with 'and'
+                .replace(/[\s\W-]+/g, '-');     // Replace spaces, non-word characters and dashes with a single dash (-)
+        };
+
+        // Event listener for title input
+        document.querySelector('input[name=title]').addEventListener('keyup', (e) => {
+            // Get title and slug input elements
+            const titleInput = e.target;
+            const slugInput = document.querySelector('input[name=slug]');
+            // Set value of slug input using slugify function
+            slugInput.value = slugify(titleInput.value);
+        });
+    </script>
 {% endblock %}
