@@ -3,7 +3,7 @@ from .models import Article
 
 class ArticleAdmin(admin.ModelAdmin):
     model = Article
-    fields = ['title', 'body', 'author', 'slug', 'approved']
+    fields = ['title', 'body', 'author', 'slug', 'approved', 'pdf', 'email', 'organization']
     actions = ['approve_articles']
 
     def approve_articles(self, request, queryset):

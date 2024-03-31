@@ -16,13 +16,13 @@ body * {
 }
 
 .sidebar {
-    background-color: rgb(201 193 193 / 48%);
+    background-color: #ff5c0021;
     color: #000;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(147, 143, 143, 0.1); 
     height: 100vh;
-    width: 20vh;
+    width: 30vh;
     transition: background-color 0.3s;
 }
 
@@ -41,6 +41,8 @@ body * {
 
 .sidebar a {
     color: #fff;
+    font-size: 15px;
+    font-weight: bold;
     text-decoration: none;
     transition: color 0.3s; /* Add transition for color change */
 }
@@ -72,8 +74,8 @@ body * {
 }
 
 .article-cell:hover {
-    box-shadow: 10px 10px 10px #ff5c0063;
-    background-color: #FFD700; /* Change background color on hover */
+    box-shadow: 5px 5px #ffffff;
+    background-color: #ff5c0063; /* Change background color on hover */
 }
 
 h2 {
@@ -85,6 +87,8 @@ h2 {
     background: none;
     border: none;
     color: #fff;
+    font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
     transition: color 0.3s;
     padding: 0.01;
@@ -96,7 +100,7 @@ h2 {
 
 /* Button styles */
 .filter-btn {
-    background-color: rgb(201 193 193 / 48%);
+    background-color: #ff5c0021;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -121,3 +125,144 @@ h2 {
     font-size: 15px;
     font-weight: bold;
 }
+
+.email {
+    font-decoration: none;
+    color: rgb(0, 153, 255);
+    /* remove underline */
+    text-decoration: none;
+}
+
+.email:hover {
+    color: #000;
+}
+
+.download{
+    background-color: #ffd700;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 9px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.download:hover {
+    background-color: #ff5c00ad;
+    color: #000;
+}
+
+
+.article-detail {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.article-detail img {
+    max-width: 100%; /* Ensure images don't overflow */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.article-detail h2 {
+    font-size: 24px; /* Increased heading size */
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.article-detail p {
+    font-size: 16px; /* Increased paragraph size */
+    color: #666;
+    margin-bottom: 10px;
+    
+}
+
+.article-detail .author-info {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 10px;
+}
+
+.article-detail .author-info p {
+    margin-right: 20px; /* Add space between name and email */
+}
+
+.article-detail .email {
+    color: #007bff; /* Blue color for email */
+}
+
+.article-detail .email:hover {
+    text-decoration: underline; /* Underline email on hover */
+}
+
+.article-detail .meta-info {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 10px;
+}
+
+.article-detail .meta-info p {
+    margin-right: 20px; /* Add space between elements */
+}
+
+.article-detail .email {
+    color: #007bff; /* Blue color for email */
+}
+
+.article-detail .email:hover {
+    text-decoration: underline; /* Underline email on hover */
+}
+
+.article-detail .info-container {
+    font-size: 5px;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.article-detail .info-box {
+    flex: 1; /* Each box takes equal space */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    background-color: #eee
+}
+
+.article-detail .info-box p {
+    margin: 0; /* Remove default margin */
+}
+
+.article-detail .email {
+    color: #007bff; /* Blue color for email */
+}
+
+.article-detail .email:hover {
+    text-decoration: none; /* Underline email on hover */
+    color: #000
+}
+
+.article-detail p {
+    font-size: 10px; /* Adjust font size for name, email, org, and date */
+}
+
+/* Add this "dets" {
+    font-size: 10px; 
+} */
+
+
+.article-detail p.dets {
+    font-size: 10px; /* Adjust font size for name, email, org, and date */
+}
+
+h2.titlehead{
+    font-size: 20px;
+    color: #000;
+}
+ p.astatus{
+    font-size: 10px
+ }
+

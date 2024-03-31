@@ -3,19 +3,30 @@
 {% block content %} 
 <div class="article-detail">
     <div class="article">
-        <img src="{{ article.thumb.url }}" style="width:100px;height:100px;" alt="{{ article.title }}">
-        <h2>{{ article.title }}</h2>
-        <p>{{ article.body }}</p>
-        <p>{{ article.date }}</p>
-        <p>{{ article.author }}</p>
+        <img src="{{ article.thumb.url }}"  alt="{{ article.title }}">
+        <h2 class="titlehead">{{ article.title }}</h2>
 
         <p>{% if article.approved %}
-            <p style="color:#000; background-color:chartreuse;">This article is APPROVED!</p>
+            <p class="astatus">✅ Approved</p>
         {% else %}
-            <p style="color:#000; background-color:white;">This article is NOT approved.</p>
+            <p class="astatus">This paper is not approved yet.</p>
         {% endif %}
-        </p>
-        <p><a href="{{ article.pdf.url }}" download>Download Document</a></p>
+        <div class="info-container">
+            <div class="info-box">
+                <p class="dets">{{ article.author }}</p>
+                <!-- email of user with clickable mailto link -->
+                <p class="dets" ><a href="mailto:{{ article.email }}" class="email">{{ article.email }}</a></p>
+            </div>
+            <div class="info-box">
+                <p class="dets">{{ article.organization }}</p>
+                <p class="dets">{{ article.date }}</p>
+            </div>
+        </div>
+
+        <p>{{ article.body }}</p>
+        <br>
+
+        <p><a href="{{ article.pdf.url }}" class="download">Download Paper</a></p>
     </div>
 </div>
 {% endblock %}
