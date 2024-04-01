@@ -18,14 +18,15 @@
                     {% endif %}
                     <li><a href="{% url 'home' %}">Home</a></li> <!-- Always show the Home link -->
                     {% if user.is_authenticated %}
+                
+                    <li><a href="{% url 'articles:create' %}">Create</a></li>
+                    <li><a href="{% url 'articles:my_articles' %}">My Articles</a></li>
                     <li>
                         <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                             {% csrf_token %}
                             <button type="submit">Logout</button>
                         </form>
                     </li>
-                    <li><a href="{% url 'articles:create' %}">Create</a></li>
-                    <li><a href="{% url 'articles:my_articles' %}">My Articles</a></li>
                     {% else %}
                     <li><a href="{% url 'accounts:login' %}">Login</a></li>
                     <li><a href="{% url 'accounts:signup' %}">Signup</a></li>

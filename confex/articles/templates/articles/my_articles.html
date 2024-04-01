@@ -8,13 +8,17 @@
     
     <div id="article-container">
         {% for article in articles %}
-            <a href="{% url 'articles:detail' slug=article.slug %}" class="article-link">
-                <div class="article-cell {% if article.approved %}approved{% else %}not-approved{% endif %}">
+            <div class="article-cell {% if article.approved %}approved{% else %}not-approved{% endif %}">
+                <a href="{% url 'articles:detail' slug=article.slug %}" class="article-link">
                     <h2>{{ article.title }}</h2>
                     <p>by {{ article.author }}</p>
                     <p>{{ article.date }}</p>
-                </div>
-            </a>
+                </a>
+                <form action="{% url 'articles:delete' slug=article.slug %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="delete-btn">Delete</button>
+                </form>
+            </div>
             <br>
         {% endfor %}
     </div>

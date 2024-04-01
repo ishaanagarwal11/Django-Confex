@@ -55,3 +55,10 @@ def my_articles(request):
     return render(request, 'articles/my_articles.html', {'form': form, 'articles': articles})
 
 
+@login_required(login_url="/accounts/login/")
+def delete_article(request, slug):
+    article = get_object_or_404(Article, slug=slug)
+    if request.method == 'POST':
+        article.delete()
+        return redirect('articles:my_articles')
+    return HttpResponseNotAllowed(['POST'])
